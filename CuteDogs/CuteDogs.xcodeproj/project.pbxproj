@@ -93,8 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				665073711ECAA51C0051A212 /* AddDogViewController.swift */,
-				665073831ECAA68D0051A212 /* DogsTableViewController.swift */,
 				6650738C1ECAB3B90051A212 /* DogDetailViewController.swift */,
+				665073831ECAA68D0051A212 /* DogsTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

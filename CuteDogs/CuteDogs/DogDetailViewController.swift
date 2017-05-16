@@ -19,14 +19,24 @@ class DogDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        dogNameTextField.text = dog?.name
-        if let maxVolume = dog?.maxBarkVolume {
-            maxBarkVolumeTextField.text = "\(maxVolume)"
-        }
+        guard let dog = dog else { fatalError() }
+        dogNameTextField.text = dog.name
+        maxBarkVolumeTextField.text = String(dog.maxBarkVolume)
     }
 
     @IBAction func handleSaveButtonTapped(_ sender: Any) {
+        guard
+            let dog = dog,
+            let updatedName = dogNameTextField.text,
+            let updatedMaxBarkVolume = maxBarkVolumeTextField.text,
+            let updatedMaxBarkVolumeInt = Int(updatedMaxBarkVolume)
+        else {
+                return
+        }
+        dog.name = updatedName
+        dog.maxBarkVolume = updatedMaxBarkVolumeInt
+        try! dog.managedObjectContext?.save()
+        self.navigationController?.popViewController(animated: true)
     }
 
 }

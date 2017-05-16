@@ -21,6 +21,11 @@ class DogsTableViewController: UITableViewController {
         dogs = try! managedObjectContext.fetch(fetchRequest)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dogs.count
     }
