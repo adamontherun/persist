@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3G9-NA-5qS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add Dog View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddDogViewController" id="BYZ-38-t0r" customClass="AddDogViewController" customModule="CuteDogs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,153 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVO-7R-ax3">
+                                <rect key="frame" x="16" y="79" width="333" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGX-Sf-ldI">
+                                <rect key="frame" x="148.5" y="117" width="78" height="30"/>
+                                <state key="normal" title="Create Dog"/>
+                                <connections>
+                                    <action selector="handleCreateDogButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0s5-Yh-2K7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iGX-Sf-ldI" firstAttribute="top" secondItem="yVO-7R-ax3" secondAttribute="bottom" constant="8" id="J48-wk-qWO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yVO-7R-ax3" secondAttribute="trailing" constant="10" id="Kyx-Nu-I1h"/>
+                            <constraint firstItem="yVO-7R-ax3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="by0-ar-qgo"/>
+                            <constraint firstItem="iGX-Sf-ldI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wcv-4R-K5A"/>
+                            <constraint firstItem="yVO-7R-ax3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="xq5-Ya-usT"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="N7P-YO-hJE">
+                        <barButtonItem key="rightBarButtonItem" title="View Dogs" id="gmo-dD-0d9">
+                            <connections>
+                                <segue destination="pJa-j5-aBR" kind="show" identifier="segueFromAddDogsToViewDogs" id="QDx-VO-kew"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dogNameTextField" destination="yVO-7R-ax3" id="tOD-Hz-BoI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="972" y="37.331334332833585"/>
+        </scene>
+        <!--Dogs Table View Controller-->
+        <scene sceneID="Ij0-d0-JcN">
+            <objects>
+                <tableViewController id="pJa-j5-aBR" customClass="DogsTableViewController" customModule="CuteDogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cKM-Sg-ka6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cuteDogCell" id="ZbZ-Ba-r9d">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZbZ-Ba-r9d" id="yjd-SB-vRd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="4xH-uI-qEg" kind="show" identifier="segueFromDogsToDogDetail" id="h9i-sb-hD9"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pJa-j5-aBR" id="rcV-xE-k63"/>
+                            <outlet property="delegate" destination="pJa-j5-aBR" id="14R-La-IK7"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hev-A6-eMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="36.431784107946029"/>
+        </scene>
+        <!--Dog Detail View Controller-->
+        <scene sceneID="qOH-L0-NiF">
+            <objects>
+                <viewController id="4xH-uI-qEg" customClass="DogDetailViewController" customModule="CuteDogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VXx-bn-Xtz"/>
+                        <viewControllerLayoutGuide type="bottom" id="zNM-Qh-7IO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vEH-OH-ws2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Max Bark Volume" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7q-gY-tDO">
+                                <rect key="frame" x="16" y="132" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bh-MI-DGF">
+                                <rect key="frame" x="170" y="182" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="handleSaveButtonTapped:" destination="4xH-uI-qEg" eventType="touchUpInside" id="atv-xo-Hx7"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-5x-lRb">
+                                <rect key="frame" x="16" y="83" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y7q-gY-tDO" firstAttribute="top" secondItem="ClR-5x-lRb" secondAttribute="bottom" constant="19" id="0Gy-qo-9hD"/>
+                            <constraint firstItem="7bh-MI-DGF" firstAttribute="top" secondItem="Y7q-gY-tDO" secondAttribute="bottom" constant="20" id="2qv-xB-lf6"/>
+                            <constraint firstItem="ClR-5x-lRb" firstAttribute="trailing" secondItem="vEH-OH-ws2" secondAttribute="trailingMargin" id="34f-69-BhF"/>
+                            <constraint firstItem="Y7q-gY-tDO" firstAttribute="leading" secondItem="vEH-OH-ws2" secondAttribute="leadingMargin" id="CUp-uM-wZf"/>
+                            <constraint firstItem="7bh-MI-DGF" firstAttribute="centerX" secondItem="vEH-OH-ws2" secondAttribute="centerX" id="Kko-XX-NZe"/>
+                            <constraint firstItem="Y7q-gY-tDO" firstAttribute="trailing" secondItem="vEH-OH-ws2" secondAttribute="trailingMargin" id="NZm-Va-Qsk"/>
+                            <constraint firstItem="ClR-5x-lRb" firstAttribute="leading" secondItem="vEH-OH-ws2" secondAttribute="leadingMargin" id="RW7-ZG-l9f"/>
+                            <constraint firstItem="ClR-5x-lRb" firstAttribute="top" secondItem="VXx-bn-Xtz" secondAttribute="bottom" constant="19" id="vEa-g4-Hb6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="91N-Z3-8aU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="HDk-fs-jUu">
+                            <connections>
+                                <action selector="handleTrashButtonTapped:" destination="4xH-uI-qEg" id="w2J-s4-ziI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dogNameTextField" destination="ClR-5x-lRb" id="ij8-fo-wLm"/>
+                        <outlet property="maxBarkVolumeTextField" destination="Y7q-gY-tDO" id="HSN-br-bnf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uRl-Xt-LqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2573.5999999999999" y="45.42728635682159"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Grg-uh-eXy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3G9-NA-5qS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DaB-bQ-sMO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ftW-mJ-byi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gpg-St-6Jy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="204" y="37"/>
         </scene>
     </scenes>
 </document>
