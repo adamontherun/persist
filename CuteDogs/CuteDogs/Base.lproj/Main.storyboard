@@ -76,6 +76,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="4xH-uI-qEg" kind="show" identifier="segueFromDogsToDogDetail" id="h9i-sb-hD9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -87,6 +90,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hev-A6-eMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1812" y="36.431784107946029"/>
+        </scene>
+        <!--Dog Detail View Controller-->
+        <scene sceneID="qOH-L0-NiF">
+            <objects>
+                <viewController id="4xH-uI-qEg" customClass="DogDetailViewController" customModule="CuteDogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VXx-bn-Xtz"/>
+                        <viewControllerLayoutGuide type="bottom" id="zNM-Qh-7IO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vEH-OH-ws2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Max Bark Volume" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7q-gY-tDO">
+                                <rect key="frame" x="16" y="132" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bh-MI-DGF">
+                                <rect key="frame" x="164" y="182" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="handleSaveButtonTapped:" destination="4xH-uI-qEg" eventType="touchUpInside" id="atv-xo-Hx7"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-5x-lRb">
+                                <rect key="frame" x="16" y="83" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y7q-gY-tDO" firstAttribute="top" secondItem="ClR-5x-lRb" secondAttribute="bottom" constant="19" id="0Gy-qo-9hD"/>
+                            <constraint firstItem="7bh-MI-DGF" firstAttribute="top" secondItem="Y7q-gY-tDO" secondAttribute="bottom" constant="20" id="2qv-xB-lf6"/>
+                            <constraint firstItem="ClR-5x-lRb" firstAttribute="trailing" secondItem="vEH-OH-ws2" secondAttribute="trailingMargin" id="34f-69-BhF"/>
+                            <constraint firstItem="Y7q-gY-tDO" firstAttribute="leading" secondItem="vEH-OH-ws2" secondAttribute="leadingMargin" id="CUp-uM-wZf"/>
+                            <constraint firstItem="7bh-MI-DGF" firstAttribute="centerX" secondItem="vEH-OH-ws2" secondAttribute="centerX" id="Kko-XX-NZe"/>
+                            <constraint firstItem="Y7q-gY-tDO" firstAttribute="trailing" secondItem="vEH-OH-ws2" secondAttribute="trailingMargin" id="NZm-Va-Qsk"/>
+                            <constraint firstItem="ClR-5x-lRb" firstAttribute="leading" secondItem="vEH-OH-ws2" secondAttribute="leadingMargin" id="RW7-ZG-l9f"/>
+                            <constraint firstItem="ClR-5x-lRb" firstAttribute="top" secondItem="VXx-bn-Xtz" secondAttribute="bottom" constant="19" id="vEa-g4-Hb6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dogNameTextField" destination="ClR-5x-lRb" id="ij8-fo-wLm"/>
+                        <outlet property="maxBarkVolumeTextField" destination="Y7q-gY-tDO" id="HSN-br-bnf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uRl-Xt-LqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2573.5999999999999" y="45.42728635682159"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Grg-uh-eXy">

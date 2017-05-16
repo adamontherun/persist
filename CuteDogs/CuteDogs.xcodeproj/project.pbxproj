@@ -15,6 +15,7 @@
 		665073841ECAA68D0051A212 /* DogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665073831ECAA68D0051A212 /* DogsTableViewController.swift */; };
 		665073891ECAAB320051A212 /* CuteDogModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 665073871ECAAB320051A212 /* CuteDogModel.xcdatamodeld */; };
 		6650738B1ECAAC760051A212 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650738A1ECAAC760051A212 /* Dog.swift */; };
+		6650738D1ECAB3B90051A212 /* DogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650738C1ECAB3B90051A212 /* DogDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		665073831ECAA68D0051A212 /* DogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsTableViewController.swift; sourceTree = "<group>"; };
 		665073881ECAAB320051A212 /* CuteDogModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CuteDogModel.xcdatamodel; sourceTree = "<group>"; };
 		6650738A1ECAAC760051A212 /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		6650738C1ECAB3B90051A212 /* DogDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				665073711ECAA51C0051A212 /* AddDogViewController.swift */,
 				665073831ECAA68D0051A212 /* DogsTableViewController.swift */,
+				6650738C1ECAB3B90051A212 /* DogDetailViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				665073891ECAAB320051A212 /* CuteDogModel.xcdatamodeld in Sources */,
 				665073701ECAA51C0051A212 /* AppDelegate.swift in Sources */,
 				6650738B1ECAAC760051A212 /* Dog.swift in Sources */,
+				6650738D1ECAB3B90051A212 /* DogDetailViewController.swift in Sources */,
 				665073841ECAA68D0051A212 /* DogsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -31,4 +31,17 @@ class DogsTableViewController: UITableViewController {
         cell.textLabel?.text = dog.name
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueFromDogsToDogDetail" {
+            guard
+                let dogDetailViewController = segue.destination as? DogDetailViewController,
+            let indexPath = tableView.indexPathForSelectedRow
+            else {
+                fatalError()
+            }
+            let dog = dogs[indexPath.row]
+            dogDetailViewController.dog = dog
+        }
+    }
 }
