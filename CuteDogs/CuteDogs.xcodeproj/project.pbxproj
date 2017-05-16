@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		665073701ECAA51C0051A212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650736F1ECAA51C0051A212 /* AppDelegate.swift */; };
-		665073721ECAA51C0051A212 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665073711ECAA51C0051A212 /* ViewController.swift */; };
+		665073721ECAA51C0051A212 /* AddDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665073711ECAA51C0051A212 /* AddDogViewController.swift */; };
 		665073751ECAA51C0051A212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 665073731ECAA51C0051A212 /* Main.storyboard */; };
 		665073771ECAA51C0051A212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665073761ECAA51C0051A212 /* Assets.xcassets */; };
 		6650737A1ECAA51C0051A212 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 665073781ECAA51C0051A212 /* LaunchScreen.storyboard */; };
+		665073841ECAA68D0051A212 /* DogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665073831ECAA68D0051A212 /* DogsTableViewController.swift */; };
+		665073891ECAAB320051A212 /* CuteDogModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 665073871ECAAB320051A212 /* CuteDogModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6650736C1ECAA51C0051A212 /* CuteDogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuteDogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6650736F1ECAA51C0051A212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		665073711ECAA51C0051A212 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		665073711ECAA51C0051A212 /* AddDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDogViewController.swift; sourceTree = "<group>"; };
 		665073741ECAA51C0051A212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		665073761ECAA51C0051A212 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		665073791ECAA51C0051A212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6650737B1ECAA51C0051A212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		665073831ECAA68D0051A212 /* DogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsTableViewController.swift; sourceTree = "<group>"; };
+		665073881ECAAB320051A212 /* CuteDogModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CuteDogModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,48 @@
 		6650736E1ECAA51C0051A212 /* CuteDogs */ = {
 			isa = PBXGroup;
 			children = (
+				665073861ECAAB1E0051A212 /* Model */,
+				665073811ECAA5F80051A212 /* Supporting */,
+				665073821ECAA5FE0051A212 /* UI */,
+			);
+			path = CuteDogs;
+			sourceTree = "<group>";
+		};
+		665073811ECAA5F80051A212 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
 				6650736F1ECAA51C0051A212 /* AppDelegate.swift */,
-				665073711ECAA51C0051A212 /* ViewController.swift */,
-				665073731ECAA51C0051A212 /* Main.storyboard */,
-				665073761ECAA51C0051A212 /* Assets.xcassets */,
 				665073781ECAA51C0051A212 /* LaunchScreen.storyboard */,
 				6650737B1ECAA51C0051A212 /* Info.plist */,
 			);
-			path = CuteDogs;
+			name = Supporting;
+			sourceTree = "<group>";
+		};
+		665073821ECAA5FE0051A212 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				665073851ECAA7010051A212 /* View Controllers */,
+				665073731ECAA51C0051A212 /* Main.storyboard */,
+				665073761ECAA51C0051A212 /* Assets.xcassets */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		665073851ECAA7010051A212 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				665073711ECAA51C0051A212 /* AddDogViewController.swift */,
+				665073831ECAA68D0051A212 /* DogsTableViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		665073861ECAAB1E0051A212 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				665073871ECAAB320051A212 /* CuteDogModel.xcdatamodeld */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +175,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				665073721ECAA51C0051A212 /* ViewController.swift in Sources */,
+				665073721ECAA51C0051A212 /* AddDogViewController.swift in Sources */,
+				665073891ECAAB320051A212 /* CuteDogModel.xcdatamodeld in Sources */,
 				665073701ECAA51C0051A212 /* AppDelegate.swift in Sources */,
+				665073841ECAA68D0051A212 /* DogsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,8 +344,22 @@
 				665073801ECAA51C0051A212 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		665073871ECAAB320051A212 /* CuteDogModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				665073881ECAAB320051A212 /* CuteDogModel.xcdatamodel */,
+			);
+			currentVersion = 665073881ECAAB320051A212 /* CuteDogModel.xcdatamodel */;
+			path = CuteDogModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 665073641ECAA51C0051A212 /* Project object */;
 }
