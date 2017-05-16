@@ -13,16 +13,11 @@ class DogsTableViewController: UITableViewController {
     
     var dogs = [Dog]()
     var managedObjectContext: NSManagedObjectContext!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let fetchRequest = NSFetchRequest<Dog>(entityName: "Dog")
-        dogs = try! managedObjectContext.fetch(fetchRequest)
-    }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        let fetchRequest = NSFetchRequest<Dog>(entityName: "Dog")
+        dogs = try! managedObjectContext.fetch(fetchRequest)
         tableView.reloadData()
     }
     

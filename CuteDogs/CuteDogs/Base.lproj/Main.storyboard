@@ -135,6 +135,13 @@
                             <constraint firstItem="ClR-5x-lRb" firstAttribute="top" secondItem="VXx-bn-Xtz" secondAttribute="bottom" constant="19" id="vEa-g4-Hb6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="91N-Z3-8aU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="HDk-fs-jUu">
+                            <connections>
+                                <action selector="handleTrashButtonTapped:" destination="4xH-uI-qEg" id="w2J-s4-ziI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dogNameTextField" destination="ClR-5x-lRb" id="ij8-fo-wLm"/>
                         <outlet property="maxBarkVolumeTextField" destination="Y7q-gY-tDO" id="HSN-br-bnf"/>

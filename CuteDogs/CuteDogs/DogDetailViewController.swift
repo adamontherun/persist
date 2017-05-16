@@ -38,5 +38,10 @@ class DogDetailViewController: UIViewController {
         try! dog.managedObjectContext?.save()
         self.navigationController?.popViewController(animated: true)
     }
-
+    @IBAction func handleTrashButtonTapped(_ sender: Any) {
+        guard let dog = dog else { return }
+        dog.managedObjectContext?.delete(dog)
+        try! dog.managedObjectContext?.save()
+        self.navigationController?.popViewController(animated: true)
+    }
 }
