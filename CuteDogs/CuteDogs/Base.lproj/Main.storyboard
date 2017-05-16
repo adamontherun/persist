@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +21,29 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVO-7R-ax3">
+                                <rect key="frame" x="16" y="79" width="333" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGX-Sf-ldI">
+                                <rect key="frame" x="148.5" y="117" width="78" height="30"/>
+                                <state key="normal" title="Create Dog"/>
+                                <connections>
+                                    <action selector="handleCreateDogButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0s5-Yh-2K7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iGX-Sf-ldI" firstAttribute="top" secondItem="yVO-7R-ax3" secondAttribute="bottom" constant="8" id="J48-wk-qWO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yVO-7R-ax3" secondAttribute="trailing" constant="10" id="Kyx-Nu-I1h"/>
+                            <constraint firstItem="yVO-7R-ax3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="by0-ar-qgo"/>
+                            <constraint firstItem="iGX-Sf-ldI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wcv-4R-K5A"/>
+                            <constraint firstItem="yVO-7R-ax3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="xq5-Ya-usT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="N7P-YO-hJE">
                         <barButtonItem key="rightBarButtonItem" title="View Dogs" id="gmo-dD-0d9">
@@ -29,6 +52,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dogNameTextField" destination="yVO-7R-ax3" id="tOD-Hz-BoI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
