@@ -17,6 +17,8 @@ class DogsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         let fetchRequest = NSFetchRequest<Dog>(entityName: "Dog")
+        let predicate = NSPredicate(format: "name == %@", "Fido")
+        fetchRequest.predicate = predicate
         dogs = try! managedObjectContext.fetch(fetchRequest)
         tableView.reloadData()
     }
